@@ -31,7 +31,7 @@ public class Products: ICarterModule
             });
         });
 
-        app.MapPut("products/id:guid", async (Guid id, [FromBody] UpdateProductRequest request, ISender sender) =>
+        app.MapPut("products/{id:guid}", async (Guid id, [FromBody] UpdateProductRequest request, ISender sender) =>
         {
             return await HandleProductNotFound(async () =>
             {
